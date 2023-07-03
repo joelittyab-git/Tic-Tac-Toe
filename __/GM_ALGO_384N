@@ -1,0 +1,39 @@
+
+*******************************************GM_ALGO_384N*****************************************************************|[Hierarchy of 1 having the most priority]
+----------------||------------||------------||-------------||----------|                                                |
+Action Priority-||---return---||---Action---||---Remarks---||---F(O)---|                                                |
+Hierarchy-------||------------||------------||-------------||----------|                                                |
+
+|=======================================================================================================================|
+1::--byte--CheckIfOpponentCanWin()          >>         | priority[0](required case for win is 0)
+
+Procedure:: Checks if any box could be played inorder that the opponent can win.
+            Checks all possible boxes.
+
+            if(true)return the box[] that needs to played bu the move generator to prevent the opponent from winning
+            if(false)return to proceed to the next case.
+|=======================================================================================================================|
+2::--byte--checkIfMachineCanWin()          >>         | priority[1](favorable case for win is box[]>0)
+
+Procedure:: Checks if any box could be played inorder that the machine can win.
+            Checks all possible boxes.
+
+            if(true)return the box[] that needs to played by the move generator
+            if(false)return to proceed to the next case.
+|=======================================================================================================================|
+3::--byte--checkIfOpponentCanPlayPattern()          >>         | priority[2](favorable case for win is 0)
+
+Procedure:: Checks if any box could be played inorder that the machine can generate a possible pattern for advantage.
+            Checks all possible patterns.
+
+            if(true)return the box[] that needs to played by the move generator
+            if(false)return to proceed to the next case.
+|=======================================================================================================================|
+4::--byte--checkIfMachineCanPlayPattern()          >>         | priority[3](favorable case for win is box[]>0)
+
+Procedure:: Checks if any box could be played inorder that the machine can generate a possible pattern for advantage.
+            Checks all possible patterns.
+
+            if(true)return the box[] that needs to played by the move generator
+            if(false)return to proceed to the next case
+************************************************************************************************************************

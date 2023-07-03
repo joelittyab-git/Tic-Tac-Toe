@@ -1,0 +1,3 @@
+Main{}->AppThread()[]->>MainMenu<:U1:U2:>{-->>Game()
+                                         -->>System.exit(0)
+}
